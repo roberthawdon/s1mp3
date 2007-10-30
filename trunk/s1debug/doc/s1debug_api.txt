@@ -1,0 +1,54 @@
+
+S1MP3 DEBUG API
+---------------
+
+
+The s1mp3 debug API is a small piece of code which stays resident at a fixed memory area.
+It provides several debugging functions:
+* puts  - output zero-terminated string to host
+* putch - output character to host
+* puti  - output integer to host
+* putui - output unsigned integer to host
+* getch - read character from host
+* brkpnt - stop execution and notify host of breakpoint (standalone)
+
+The API occupies at least two restart locations:
+* 0x30 - execute API function (opcode 0xF7)
+* 0x38 - breakpoint (opcode 0xFF)
+
+The code implementation of the API could be located anywhere in ZRAM.
+A good choice will be to place it at 0x100..0x2FF for example.
+
+
+COMMUNICATION PROTOCOL
+----------------------
+
+The debug interface provides us with 4 single-directional bits for each direction:
+* client -> host: DATA_OUT (bit 5..7, bit 5=MSB), CLK (bit 4)
+* host -> client: DATA_OUT (bit 0..2, bit 0=MSB), READY (bit 3)
+
+Basic data exchange protocol:
+
+---client---                    ---host---
+set DATA_OUT                    .
+toggle CLK                 ->   wait until CLK toggles
+.                               get DATA
+.                               set DATA_OUT (return answer)
+wait until READY toggles   <-   toggle READY
+get DATA                        .
+
+
+Data gets transfered bytewise with a 1bit odd parity prefix (9th bit) in front of each byte sent (8 bits).
+The data bytes get transfered with MSB first.
+
+To syncronize the transfer, host and client use a special syncronization protocol:
+
+---client---                    ---host---
+send 0x000 (9 zero bits)  ->    if parity error then resync
+                                wait until 9 zero bits got received
+send 3 bit sync-code      ->    receive sync-code (service number)
+while receiving 3 bits    <-    if service gets accepted, echo code
+
+repeat whole sequence
+until host returned an
+echo
