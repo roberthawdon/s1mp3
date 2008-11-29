@@ -43,9 +43,8 @@ uint32 calc_sum32(const void *ptr, size_t size)
   register uint32 crc = 0;
   register uint32 *cp = (uint32 *)ptr;
   for(; size >= 4; size-=4) crc += *cp++;
-  /*if(size == 0) ;
-  else if(size == 1) crc += *((unsigned __int8*)cp);
+  if(size == 1) crc += *((unsigned __int8*)cp);
   else if(size == 2) crc += *((unsigned __int16*)cp);
-  else if(size == 3) crc += (*cp & 0xFFFFFF);*/
+  else if(size == 3) crc += *((unsigned __int16*)cp) + (((unsigned __int8*)cp)[2] << 16);
   return crc;
 }

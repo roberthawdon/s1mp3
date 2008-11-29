@@ -1,8 +1,10 @@
 const char szAppInfo[] = 
 
 // -----------------------------------------------------------------------------------------------
-"s1fwx v3.2 - copyright (c)2005-2007 wiRe (http://www.s1mp3.de/)\n";
+"s1fwx v3.3 - copyright (c)2005-2008 wiRe (http://www.s1mp3.de/)\n";
 // -----------------------------------------------------------------------------------------------
+// v3.3
+// -wasn't able to extract empty files without errors
 // v3.2
 // -refactored firmware extraction routine
 // -implement firmware upload function
@@ -373,20 +375,24 @@ int extract_to_file(char *filename, FILE *fh_src, size_t fofs, size_t fsize, uin
 {
   // by converting fofs to long we support only files up to 2GB!
   if(fseek(fh_src, (long)fofs, SEEK_SET) != 0) return GetLastError();
+  if(sum32p) *sum32p = 0;
 
   FILE *fh = fopen(filename, "wb");
   if(!fh) return GetLastError();   
 
   int ret = ERROR_SUCCESS;
-  uint8 *buf = new uint8[fsize];
-  if(!buf) ret = ERROR_NOT_ENOUGH_MEMORY;
-  else {
-  
-    if(fread(buf, fsize, 1, fh_src) != 1) ret = ERROR_READ_FAULT;
-    if(fwrite(buf, fsize, 1, fh) != 1) ret = ERROR_WRITE_FAULT;
-    if(sum32p != NULL) *sum32p = calc_sum32(buf, fsize);
+  if(fsize > 0)
+  {
+    uint8 *buf = new uint8[fsize];
+    if(!buf) ret = ERROR_NOT_ENOUGH_MEMORY;
+    else {
+    
+      if(fread(buf, fsize, 1, fh_src) != 1) ret = ERROR_READ_FAULT;
+      if(fwrite(buf, fsize, 1, fh) != 1) ret = ERROR_WRITE_FAULT;
+      if(sum32p != NULL) *sum32p = calc_sum32(buf, fsize);
 
-    delete buf;
+      delete buf;
+    }
   }
 
   fclose(fh);
@@ -400,20 +406,24 @@ int extract_from_file(char *filename, FILE *fh_dest, uint32 *fsizep, uint32 *sum
   struct stat fs;
   if(stat(filename, &fs) != 0) return GetLastError();
   if(fsizep) *fsizep = (uint32)fs.st_size;
+  if(sum32p) *sum32p = 0;
 
   FILE *fh = fopen(filename, "rb");
   if(!fh) return GetLastError();
 
   int ret = ERROR_SUCCESS;
-  uint8 *buf = new uint8[fs.st_size];
-  if(!buf) ret = ERROR_NOT_ENOUGH_MEMORY;
-  else {
-  
-    if(fread(buf, fs.st_size, 1, fh) != 1) ret = ERROR_READ_FAULT;
-    if(fwrite(buf, fs.st_size, 1, fh_dest) != 1) ret = ERROR_WRITE_FAULT;
-    if(sum32p != NULL) *sum32p = calc_sum32(buf, fs.st_size);
+  if(fs.st_size > 0)
+  {
+    uint8 *buf = new uint8[fs.st_size];
+    if(!buf) ret = ERROR_NOT_ENOUGH_MEMORY;
+    else {
+    
+      if(fread(buf, fs.st_size, 1, fh) != 1) ret = ERROR_READ_FAULT;
+      if(fwrite(buf, fs.st_size, 1, fh_dest) != 1) ret = ERROR_WRITE_FAULT;
+      if(sum32p) *sum32p = calc_sum32(buf, fs.st_size);
 
-    delete buf;
+      delete buf;
+    }
   }
 
   fclose(fh);

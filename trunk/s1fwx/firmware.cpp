@@ -412,7 +412,7 @@ bool write_file(char *filename, LP_ADFU_SYS_INFO info, uint8 *brec, uint8 *fw, u
   afi.entry[i].type = 'B';
   afi.entry[i].download_addr = AFI_ENTRY_DLADR_BREC;
   memcpy(afi.entry[i].desc, info->hw_scan.flash_type, 4);
-  memcpy(afi.entry[i].filename, "BREC", 8);
+  memcpy(afi.entry[i].filename, "BREC", 4);
   memcpy(afi.entry[i].filename+4, info->hw_scan.flash_type, 4);
   memcpy(afi.entry[i].extension, "BIN", 3);
   afi.entry[i].fofs = fofs;
