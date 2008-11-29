@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9,00"
+	Name="giveio.bin"
+	ProjectGUID="{E78C96DD-17FE-4C8E-8DC0-22DAFAB2134E}"
+	RootNamespace="giveio.bin"
+	Keyword="MakeFileProj"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(ProjectDir)"
+			IntermediateDirectory="$(ProjectDir)"
+			ConfigurationType="0"
+			BuildLogFile="$(ProjectDir)\BuildLog.htm"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cmd /C make.bat"
+				ReBuildCommandLine="cmd /C make.bat"
+				CleanCommandLine="cmd /C clean.bat"
+				Output="giveio.h"
+				PreprocessorDefinitions="WIN32;_DEBUG"
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(ProjectDir)"
+			IntermediateDirectory="$(ProjectDir)"
+			ConfigurationType="0"
+			BuildLogFile="$(ProjectDir)\BuildLog.htm"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="cmd /C make.bat"
+				ReBuildCommandLine="cmd /C make.bat"
+				CleanCommandLine="cmd /C clean.bat"
+				Output="giveio.h"
+				PreprocessorDefinitions="WIN32;NDEBUG"
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
+			>
+			<File
+				RelativePath=".\giveio.asm"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
+			>
+			<File
+				RelativePath="..\..\inc\s1api.inc"
+				>
+			</File>
+			<File
+				RelativePath="..\..\inc\s1reg.inc"
+				>
+			</File>
+			<File
+				RelativePath="..\..\inc\s1sys.inc"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Output Files"
+			>
+			<File
+				RelativePath=".\giveio.bin"
+				>
+			</File>
+			<File
+				RelativePath=".\giveio.h"
+				>
+			</File>
+			<File
+				RelativePath=".\giveio.lst"
+				>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

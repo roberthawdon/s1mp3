@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "giveio.bin", "giveio.bin.vcproj", "{E78C96DD-17FE-4C8E-8DC0-22DAFAB2134E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E78C96DD-17FE-4C8E-8DC0-22DAFAB2134E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E78C96DD-17FE-4C8E-8DC0-22DAFAB2134E}.Debug|Win32.Build.0 = Debug|Win32
+		{E78C96DD-17FE-4C8E-8DC0-22DAFAB2134E}.Release|Win32.ActiveCfg = Release|Win32
+		{E78C96DD-17FE-4C8E-8DC0-22DAFAB2134E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
