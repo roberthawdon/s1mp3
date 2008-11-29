@@ -38,8 +38,8 @@ IDI_MAIN                ICON                    "main.ico"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,2,0,0
- PRODUCTVERSION 3,2,0,0
+ FILEVERSION 3,3,0,0
+ PRODUCTVERSION 3,3,0,0
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -56,12 +56,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "http://www.s1mp3.de/"
             VALUE "FileDescription", "s1mp3 player  firmware extractor commandline tool"
-            VALUE "FileVersion", "3, 2, 0, 0"
+            VALUE "FileVersion", "3, 3, 0, 0"
             VALUE "InternalName", "s1fwx"
-            VALUE "LegalCopyright", "Copyright (C) 2005-2007 wiRe (wiRe@s1mp3.de)"
+            VALUE "LegalCopyright", "Copyright (C) 2005-2008 wiRe (wiRe@s1mp3.de)"
             VALUE "OriginalFilename", "s1fwx.exe"
             VALUE "ProductName", "s1fwx"
-            VALUE "ProductVersion", "3, 2, 0, 0"
+            VALUE "ProductVersion", "3, 3, 0, 0"
         END
     END
     BLOCK "VarFileInfo"
