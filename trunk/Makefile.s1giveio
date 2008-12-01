@@ -1,0 +1,22 @@
+ifneq ($(ENV),WIN32)
+#CCFLAGS=-O2 -I/usr/src -DLINUX
+CCFLAGS=-O2 -DLINUX
+EXT=
+DEL=rm -f
+DEST=
+CC=g++
+else
+CC=gcc
+CCFLAGS=-O2 -I. -DWIN32 -Wall -Llib/gcc
+EXT=.exe
+DEL=@del
+DEST=win32-bin/
+endif
+LDFLAGS=-lusb
+
+all: s1giveio/s1giveio
+
+include common/make.inc.mk
+include s1giveio/make.inc.mk
+
+clean: clean_common clean_s1giveio

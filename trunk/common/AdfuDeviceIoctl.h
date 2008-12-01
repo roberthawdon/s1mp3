@@ -13,8 +13,10 @@
 
 
 #pragma once
-
+#ifdef LINUX
+#else
 #include <windows.h>
+#endif
 #include <string>
 #include <list>
 

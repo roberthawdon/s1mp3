@@ -12,17 +12,25 @@
 //=================================================================================================
 #ifndef _REMOVE_ADFU_DEVICE_LIBUSB_
 
-
+#ifdef LINUX
+#else
 #pragma once
 #include <windows.h>
+#endif
 #include <string>
 #include <list>
 
 #include "AdfuDevice.h"
 #include "AdfuException.h"
+#include "AdfuCbw.h"
+#include "AdfuCsw.h"
 
+#ifdef LINUX
+#include <usb.h>
+#else
 #include "libusb/libusb.h"  //also needs "libusb/libusb.lib"
 #pragma comment(lib, "libusb.lib")
+#endif
 
 
 //-------------------------------------------------------------------------------------------------

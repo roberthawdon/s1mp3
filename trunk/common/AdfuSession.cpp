@@ -9,14 +9,19 @@
 // this file is licensed under the GNU GPL.
 // no warranty of any kind is explicitly or implicitly stated.
 //=================================================================================================
+#ifdef LINUX
+#else
 #include <windows.h>
+#endif
 #include <string>
 #include <list>
 
 #include "AdfuSession.h"
 #include "AdfuDevice.h"
+#ifndef LINUX
 #include "AdfuDeviceUsb.h"
 #include "AdfuDeviceIoctl.h"
+#endif
 #include "AdfuDeviceLibusb.h"
 #include "AdfuException.h"
 
@@ -60,13 +65,16 @@ void AdfuSession::open(DeviceDescriptor &DevDescr)
 
   switch(DevDescr.g_nType)
   {
+ #ifndef LINUX
   #ifndef _REMOVE_ADFU_DEVICE_USB_
     case DeviceDescriptor::ADFU:    g_lpDevice = (AdfuDevice*)new AdfuDeviceUsb(); break;
   #endif
 
+
   #ifndef _REMOVE_ADFU_DEVICE_IOCTL_
     case DeviceDescriptor::IOCTL:   g_lpDevice = (AdfuDevice*)new AdfuDeviceIoctl(); break;
   #endif
+ #endif
   
   #ifndef _REMOVE_ADFU_DEVICE_LIBUSB_
     case DeviceDescriptor::LIBUSB:  g_lpDevice = (AdfuDevice*)new AdfuDeviceLibusb(); break;
@@ -260,7 +268,7 @@ unsigned int AdfuSession::downloadBlock(unsigned int uAddress,
 void AdfuSession::enumerate(std::list<DeviceDescriptor> &lstDevDescr)
 {
   lstDevDescr.clear();
-
+ #ifndef LINUX
   #ifndef _REMOVE_ADFU_DEVICE_USB_
     enum_add(lstDevDescr, DeviceDescriptor::ADFU, (AdfuDevice &)AdfuDeviceUsb());
   #endif
@@ -268,9 +276,9 @@ void AdfuSession::enumerate(std::list<DeviceDescriptor> &lstDevDescr)
   #ifndef _REMOVE_ADFU_DEVICE_IOCTL_
     enum_add(lstDevDescr, DeviceDescriptor::IOCTL, (AdfuDevice &)AdfuDeviceIoctl());
   #endif
-
+ #endif
   #ifndef _REMOVE_ADFU_DEVICE_LIBUSB_
-    enum_add(lstDevDescr, DeviceDescriptor::LIBUSB, (AdfuDevice &)AdfuDeviceLibusb());
+    enum_add(lstDevDescr, DeviceDescriptor::LIBUSB, *((AdfuDevice *)new AdfuDeviceLibusb()));
   #endif
 }
 
@@ -300,3 +308,4 @@ bool AdfuSession::detectRecoveryMode()
   download(0x0800, uBuf, sizeof(uBuf));
   return(memcmp(uBuf, "SYS INFO", 8) != 0);
 }
+

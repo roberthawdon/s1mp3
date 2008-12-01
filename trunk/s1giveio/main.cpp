@@ -132,7 +132,8 @@ bool upload(uint16 addr)
 {
   char fname[MAX_PATH];
   printf("filename: ");
-  gets(fname);
+  fgets(fname, 1000, stdin);
+  fname[strlen(fname)-1] = 0;
   if(!fname[0]) return false;
 
   FILE *fh = fopen(fname, "rb");
@@ -193,9 +194,11 @@ int main(int argc, char** argv)
     do
     {
       printf("\n-");
-      gets(cl);
+      fgets(cl, 1000, stdin);
+      cl[strlen(cl)-1]=0;
       char *clp = cl;
       while(*clp==' ' || *clp=='\t') clp++;
+      
 
       short args = parse_values(clp+1);
       if(args < 0) printf("error parsing arguments: check syntax\n");

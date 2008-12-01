@@ -10,8 +10,11 @@
 // no warranty of any kind is explicitly or implicitly stated.
 //=================================================================================================
 #pragma once
+#ifdef LINUX
+#else
 #include <windows.h>
 #include <string>
+#endif
 #include <list>
 
 #include "common.h"

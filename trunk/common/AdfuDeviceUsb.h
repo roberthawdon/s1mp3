@@ -11,11 +11,13 @@
 //=================================================================================================
 #ifndef _REMOVE_ADFU_DEVICE_USB_
 
-
+#ifdef LINUX
+#else
 #pragma once
 #include <windows.h>
 #include <setupapi.h>   //also needs "setupapi.lib"
 #pragma comment(lib, "setupapi.lib")
+#endif
 
 #include <string>
 #include <list>
