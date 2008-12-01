@@ -9,7 +9,7 @@
 // this file is licensed under the GNU GPL.
 // no warranty of any kind is explicitly or implicitly stated.
 //=================================================================================================
-#include "GiveIO.h"
+#include "giveio.h"
 
 
 //-------------------------------------------------------------------------------------------------

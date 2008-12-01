@@ -10,14 +10,21 @@
 // no warranty of any kind is explicitly or implicitly stated.
 //=================================================================================================
 #pragma once
-#include <windows.h>
-#include <tchar.h>
+#ifdef LINUX
+#else
+    #include <windows.h>
+    #include <tchar.h>
+#endif
 
 
 class AdfuException {
 public:
   AdfuException(DWORD dwError = 0)
   {
+    #ifdef LINUX
+	g_strError = "AdfuException!";
+	/* TODO generate a string properly */
+    #else
     if(dwError == 0) dwError = GetLastError();
     g_dwError = dwError;
 
@@ -43,6 +50,7 @@ public:
       std::string strDebug = "AdfuException: ";
       strDebug += g_strError;
       ::OutputDebugStringA(strDebug.c_str());
+    #endif
     #endif
   }
 

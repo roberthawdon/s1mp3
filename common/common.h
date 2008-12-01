@@ -10,7 +10,7 @@
   #include <fcntl.h>
   #include <sys/ioctl.h>
 
-  #include <string.h>
+  #include <string>
   #include <stdint.h>
   #include <errno.h>
 
@@ -64,6 +64,16 @@
   #define LPVOID void *
 
   #define SET_COLOR(_color_) //TODO
+  
+  #define ERROR_FUNCTION_FAILED 0 /* TODO - define a proper constant */
+  #define ERROR_OPEN_FAILED 0 /* TODO - define a proper constant */
+  #define ERROR_INVALID_HANDLE 0 /* TODO - define a proper constant */
+  #define ERROR_INVALID_PARAMETER 0 /* TODO - define a proper constant */
+  #define LOBYTE(p) (p & 0xFF)
+  #define HIBYTE(p) ((p >> 8) & 0xFF)
+  #define LOWORD(p) (p & 0xFFFF)
+  #define HIWORD(p) ((p >> 16) & 0xFFFF)
+  #define MAX_PATH 500
 
 #else
 

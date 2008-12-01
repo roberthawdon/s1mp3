@@ -11,7 +11,7 @@
 /**     changes to this file.                                **/
 /**************************************************************/
 #define _CRT_SECURE_NO_WARNINGS
-#include "..\common\common.h"
+#include "../common/common.h"
 #include "dasm.h"
 
 // dont use _read and _write, call the operations directly instead
@@ -19,7 +19,7 @@
 #define _read read
 
 
-static char *Mnemonics[256] =
+static const char *Mnemonics[256] =
 {
   "NOP","LD BC,#h","LD (BC),A","INC BC","INC B","DEC B","LD B,*h","RLCA",
   "EX AF,AF'","ADD HL,BC","LD A,(BC)","DEC BC","INC C","DEC C","LD C,*h","RRCA",
@@ -55,7 +55,7 @@ static char *Mnemonics[256] =
   "RET M","LD SP,HL","JP M,#h","EI","CALL M,#h","PFX_FD","CP *h","RST 38h"
 };
 
-static char *MnemonicsCB[256] =
+static const char *MnemonicsCB[256] =
 {
   "RLC B","RLC C","RLC D","RLC E","RLC H","RLC L","RLC (HL)","RLC A",
   "RRC B","RRC C","RRC D","RRC E","RRC H","RRC L","RRC (HL)","RRC A",
@@ -91,7 +91,7 @@ static char *MnemonicsCB[256] =
   "SET 7,B","SET 7,C","SET 7,D","SET 7,E","SET 7,H","SET 7,L","SET 7,(HL)","SET 7,A"
 };
 
-static char *MnemonicsED[256] =
+static const char *MnemonicsED[256] =
 {
   "DB EDh,00h","DB EDh,01h","DB EDh,02h","DB EDh,03h",
   "DB EDh,04h","DB EDh,05h","DB EDh,06h","DB EDh,07h",
@@ -159,7 +159,7 @@ static char *MnemonicsED[256] =
   "DB EDh,FCh","DB EDh,FDh","DB EDh,FEh","DB EDh,FFh"
 };
 
-static char *MnemonicsXX[256] =
+static const char *MnemonicsXX[256] =
 {
   "NOP","LD BC,#h","LD (BC),A","INC BC","INC B","DEC B","LD B,*h","RLCA",
   "EX AF,AF'","ADD I%,BC","LD A,(BC)","DEC BC","INC C","DEC C","LD C,*h","RRCA",
@@ -195,7 +195,7 @@ static char *MnemonicsXX[256] =
   "RET M","LD SP,I%","JP M,#h","EI","CALL M,#h","PFX_FD","CP *h","RST 38h"
 };
 
-static char *MnemonicsXCB[256] =
+static const char *MnemonicsXCB[256] =
 {
   "RLC B","RLC C","RLC D","RLC E","RLC H","RLC L","RLC (I%@h)","RLC A",
   "RRC B","RRC C","RRC D","RRC E","RRC H","RRC L","RRC (I%@h)","RRC A",
@@ -237,7 +237,8 @@ static char *MnemonicsXCB[256] =
 //*****************************************************************************
 uint16 dasm(char *S, uint8 *A)
 {
-  char R[128], H[10], C=0, *T, *P;
+  char R[128], H[10], C=0, *P;
+  const char * T;
   uint8 *B=A, J=0, Offset;
 
   switch(*B)
