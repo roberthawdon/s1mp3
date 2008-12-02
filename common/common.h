@@ -11,6 +11,7 @@
   #include <sys/ioctl.h>
 
   #include <string>
+  #include <string.h>
   #include <stdint.h>
   #include <errno.h>
 
