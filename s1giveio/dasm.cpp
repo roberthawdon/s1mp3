@@ -13,6 +13,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "../common/common.h"
 #include "dasm.h"
+#include <string.h>
 
 // dont use _read and _write, call the operations directly instead
 #define _write write
