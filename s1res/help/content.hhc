@@ -1,0 +1,21 @@
+<!doctype html public "-//ietf//dtd html//en">
+<html><head><!-- sitemap 1.0 --></head><body>
+<ul>
+	<li> <object type="text/sitemap">
+		<param name="name" value="S1res Help">
+		<param name="local" value="general/index.htm">
+		</object>
+	<li> <object type="text/sitemap">
+		<param name="name" value="About s1res">
+		<param name="local" value="general/s1res.htm">
+		</object>
+	<li> <object type="text/sitemap">
+		<param name="name" value="Register s1res">
+		<param name="local" value="general/register.htm">
+		</object>
+	<li> <object type="text/sitemap">
+		<param name="name" value="Frequently Asked Questions (FAQ)">
+		<param name="local" value="general/faq.htm">
+		</object>
+</ul>
+</body></html>

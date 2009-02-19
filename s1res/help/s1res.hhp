@@ -1,0 +1,19 @@
+[OPTIONS]
+Binary Index=No
+Compatibility=1.0
+Compiled file=s1res.chm
+Contents file=content.hhc
+Default topic=general\index.htm
+Display compile progress=No
+Index file=index.hhk
+Language=0x409 English (United States)
+
+
+[FILES]
+general\faq.htm
+general\index.htm
+general\register.htm
+general\s1res.htm
+
+[INFOTYPES]
+
