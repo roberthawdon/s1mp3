@@ -1,0 +1,633 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON                    "res\\main.ico"
+IDI_OPEN                ICON                    "res\\open.ico"
+IDI_WIZARD              ICON                    "res\\wizard.ico"
+IDI_RELOAD              ICON                    "res\\reload.ico"
+IDI_USER                ICON                    "res\\user.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE, GRAYED
+        MENUITEM "Save &As...",                 ID_FILE_SAVEAS, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Import Firmware...",         ID_FILE_IMPORT
+        MENUITEM "&Export Firmware...",         ID_FILE_EXPORT, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Open...",                    ID_EDIT_OPEN, GRAYED
+        MENUITEM "&Close",                      ID_EDIT_CLOSE, GRAYED
+        MENUITEM "Close &All",                  ID_EDIT_CLOSEALL, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                ID_EDIT_REFRESH, GRAYED
+        MENUITEM "&Select All\tCTRL+A",         ID_EDIT_SELECTALL, GRAYED
+        MENUITEM SEPARATOR
+        POPUP "S&elect Code Page"
+        BEGIN
+            MENUITEM "&Default",                    ID_CODEPAGE_DEFAULT
+            MENUITEM "D&efault (URL-encoded edit mode)", ID_CODEPAGE_DEFAULT_URLENC
+            MENUITEM SEPARATOR
+            POPUP "&ISO Code Page"
+            BEGIN
+                MENUITEM "&Western European\tISO-8859-1", ID_CODEPAGE_ISO_LATIN1
+                MENUITEM "&Central European\tISO-8859-2", ID_CODEPAGE_ISO_LATIN2
+                MENUITEM "&Latin 3\tISO-8859-3",        ID_CODEPAGE_ISO_LATIN3
+                MENUITEM "&Baltic\tISO-8859-4",         ID_CODEPAGE_ISO_BALTIC
+                MENUITEM "C&yrillic\tISO-8859-5",       ID_CODEPAGE_ISO_CYRILLIC
+                MENUITEM "&Arabic\tISO-8859-6",         ID_CODEPAGE_ISO_ARABIC
+                MENUITEM "&Greek\tISO-8859-7",          ID_CODEPAGE_ISO_GREEK
+                MENUITEM "&Hebrew\tISO-8859-8",         ID_CODEPAGE_ISO_HEBREW
+                MENUITEM "&Turkish\tISO-8859-9",        ID_CODEPAGE_ISO_TURKISH
+                MENUITEM "E&stonian\tISO-8859-13",      ID_CODEPAGE_ISO_ESTONIAN
+                MENUITEM "Lat&in 9\tISO-8859-15",       ID_CODEPAGE_ISO_LATIN9
+            END
+            POPUP "&Windows Code Page"
+            BEGIN
+                MENUITEM "&European\tW-1250",           ID_CODEPAGE_WIN_EUROPEAN
+                MENUITEM "&Cyrillic\tW-1251",           ID_CODEPAGE_WIN_CYRILLIC
+                MENUITEM "&Latin\tW-1252",              ID_CODEPAGE_WIN_LATIN
+                MENUITEM "&Greek\tW-1253",              ID_CODEPAGE_WIN_GREEK
+                MENUITEM "&Turkish\tW-1254",            ID_CODEPAGE_WIN_TURKISH
+                MENUITEM "&Hebrew\tW-1255",             ID_CODEPAGE_WIN_HEBREW
+                MENUITEM "&Arabic\tW-1256",             ID_CODEPAGE_WIN_ARABIC
+                MENUITEM "&Baltic\tW-1257",             ID_CODEPAGE_WIN_BALTIC
+                MENUITEM "&Vietnamese\tW-1258",         ID_CODEPAGE_WIN_VIETNAMESE
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "&Japanese\tSHIFT-JIS",        ID_CODEPAGE_JAPANESE
+            MENUITEM "&Korean\tKS-C-5601",          ID_CODEPAGE_KOREAN
+            MENUITEM "&Simplified Chinese\tGB2312", ID_CODEPAGE_SCHINESE
+            MENUITEM "&Traditional Chinese\tBIG5",  ID_CODEPAGE_TCHINESE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "O&ptions...\tF10",            ID_EDIT_OPTIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help...\tF1",                ID_HELP_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Donate...",                  ID_HELP_DONATE
+        MENUITEM "&Check for Updates...",       ID_HELP_UPDATE
+        MENUITEM SEPARATOR
+        MENUITEM "&About...",                   ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAIN ACCELERATORS 
+BEGIN
+    VK_F10,         ID_EDIT_OPTIONS,        VIRTKEY, NOINVERT
+    VK_F5,          ID_EDIT_REFRESH,        VIRTKEY, NOINVERT
+    "A",            ID_EDIT_SELECTALL,      VIRTKEY, CONTROL, NOINVERT
+    VK_F4,          ID_FILE_CLOSE,          VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          ID_HELP_OPEN,           VIRTKEY, NOINVERT
+    VK_TAB,         ID_KEY_SH_TAB,          VIRTKEY, SHIFT, NOINVERT
+    VK_TAB,         ID_KEY_TAB,             VIRTKEY, NOINVERT
+    VK_DELETE,      ID_KEY_DEL,             VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,0,0,0
+ PRODUCTVERSION 4,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "http://www.s1mp3.de/"
+            VALUE "FileDescription", "s1mp3 resource editor"
+            VALUE "FileVersion", "4, 0, 0, 0"
+            VALUE "InternalName", "s1res"
+            VALUE "LegalCopyright", "Copyright (C) 2005-2009 wiRe. All rights reserved."
+            VALUE "OriginalFilename", "s1res.exe"
+            VALUE "ProductName", "s1res"
+            VALUE "ProductVersion", "4, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOGEX 0, 0, 199, 148
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION
+CAPTION "About"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,74,127,50,14
+    ICON            IDI_MAIN,IDC_STATIC,7,7,20,20,SS_CENTERIMAGE | SS_REALSIZEIMAGE
+    LTEXT           "s1res v4.0\n\nCopyright (c) 2005-2009 wiRe.\n\nThis program comes with ABSOLUTELY NO WARRANTY.\n\nThis is free software, and you are welcome to redistribute it  under certain conditions.\n\nRead license for more informations.",IDC_STATIC,32,12,160,92
+    LTEXT           "http://www.s1mp3.de/",IDC_TXT_HTTP,32,109,75,8
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 280, 144
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION
+CAPTION "Options"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "&Image editor",IDC_STATIC,7,7,266,72
+    CONTROL         "use &default/associated editor for bitmap (BMP) files",IDC_RAD_IMGEDT_DEFAULT,
+                    "Button",BS_AUTORADIOBUTTON,15,20,250,10
+    CONTROL         "use microsoft &paint as image editor (mspaint.exe)",IDC_RAD_IMGEDT_MSPAINT,
+                    "Button",BS_AUTORADIOBUTTON,15,34,250,10
+    CONTROL         "use custom image editor...",IDC_RAD_IMGEDT_CUSTOM,
+                    "Button",BS_AUTORADIOBUTTON,15,48,250,10
+    EDITTEXT        IDC_EDT_CUSTOM,25,60,224,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_BTN_CUSTOM,251,60,14,12,BS_ICON | BS_CENTER | BS_VCENTER
+    GROUPBOX        "&Monochrome colors",IDC_STATIC,7,84,266,34
+    CTEXT           "Sample Text",IDC_TXT_SAMPLE,15,97,49,14,SS_CENTERIMAGE | WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Choose &foreground color...",IDC_BTN_CHOOSE_FG,70,97,95,14
+    PUSHBUTTON      "Choose &background color...",IDC_BTN_CHOOSE_BG,170,97,95,14
+    DEFPUSHBUTTON   "OK",IDOK,168,123,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,223,123,50,14
+END
+
+IDD_WIZ_IMPORT DIALOGEX 0, 0, 364, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Import Firmware Wizard"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         107,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,84,200
+    CONTROL         "",IDC_CONTENT,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,91,7,266,161
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,87,172,274,1
+    PUSHBUTTON      "&Cancel",IDCANCEL,91,179,50,14
+    PUSHBUTTON      "<< &Back",IDC_BTN_PREV,251,179,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "&Next >>",IDC_BTN_NEXT,307,179,50,14
+END
+
+IDD_WIZ_PG_DEVICE DIALOGEX 91, 7, 266, 161
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TEXT,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,0,0,265,75,WS_EX_TRANSPARENT
+    LTEXT           "Access method:",IDC_STATIC,0,77,52,10,SS_CENTERIMAGE | WS_DISABLED
+    CONTROL         "&ADFU (native)",IDC_RAD_ADFU,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,56,77,61,10
+    CONTROL         "&GIVEIO (v9-compatible)",IDC_RAD_GIVEIO,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,121,77,91,10
+    PUSHBUTTON      "",IDC_BTN_RELOAD,251,75,15,13,BS_ICON | BS_CENTER | BS_VCENTER
+    LISTBOX         IDC_LIST,0,90,265,71,NOT LBS_NOTIFY | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_WIZ_PG_ACCESS DIALOGEX 91, 7, 266, 161
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TEXT,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,0,0,265,75,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",0x0,0,147,265,14
+    CONTROL         "",IDC_STATUS,"RichEdit20W",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY | WS_VSCROLL | WS_TABSTOP,0,90,265,57,WS_EX_STATICEDGE
+END
+
+IDD_WIZ_PG_FINISH DIALOGEX 91, 7, 266, 161
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TEXT,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,0,0,265,75,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_TXT_STATUS,0,77,265,10,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATUS,"RichEdit20W",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY | WS_VSCROLL | WS_TABSTOP,0,90,265,71,WS_EX_STATICEDGE
+END
+
+IDD_WIZ_EXPORT DIALOGEX 0, 0, 364, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Export Firmware Wizard"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         107,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,84,200
+    CONTROL         "",IDC_CONTENT,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,91,7,266,161
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,87,172,274,1
+    PUSHBUTTON      "&Cancel",IDCANCEL,91,179,50,14
+    PUSHBUTTON      "<< &Back",IDC_BTN_PREV,251,179,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "&Next >>",IDC_BTN_NEXT,307,179,50,14
+END
+
+IDD_FW_PROP DIALOGEX 0, 0, 415, 225
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION
+CAPTION "Firmware Property Sheet"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&FW-version:",IDC_STATIC,7,7,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VER_A,63,7,20,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    CTEXT           ".",IDC_STATIC,83,7,8,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VER_B,91,7,20,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    CTEXT           ".",IDC_STATIC,111,7,8,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VER_C,119,7,28,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "&Release date:",IDC_STATIC,7,24,53,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_EDT_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,63,23,84,12
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,155,7,1,30
+    RTEXT           "&VID:",IDC_STATIC,161,7,15,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VID,179,7,43,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    RTEXT           "&PID:",IDC_STATIC,161,23,15,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_PID,179,23,43,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,40,215,1
+    LTEXT           "&General info:",IDC_STATIC,7,45,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_GENERAL,63,45,159,12,ES_AUTOHSCROLL
+    LTEXT           "&Manufacturer:",IDC_STATIC,7,62,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MANUFACTURER,63,61,159,12,ES_AUTOHSCROLL
+    LTEXT           "&Device name:",IDC_STATIC,7,79,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_DEV_NAME,63,78,159,12,ES_AUTOHSCROLL
+    LTEXT           "V&endor ID:",IDC_STATIC,7,96,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_VENDOR_INF,63,96,159,12,ES_AUTOHSCROLL
+    LTEXT           "Pr&oduct ID/Rev.:",IDC_STATIC,7,113,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_PROD_INF,63,112,106,12,ES_AUTOHSCROLL
+    CTEXT           "/",IDC_STATIC,169,112,8,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_PROD_REV,177,112,45,12,ES_AUTOHSCROLL
+    LTEXT           "Prod&uct Desc.:",IDC_STATIC,7,130,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_USB_DESC,63,130,159,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,228,7,1,136
+    LTEXT           "&Language:",IDC_STATIC,235,7,53,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_CMB_LANG,297,7,111,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Battery type:",IDC_STATIC,235,23,53,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_CMB_BATTERY,297,23,111,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "O&nline mode:",IDC_STATIC,235,39,53,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_CMB_ONLINE,297,39,111,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Repla&y mode:",IDC_STATIC,235,55,53,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_CMB_REPLAY,297,55,111,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,235,75,173,1
+    LTEXT           "D&isplay contrast:",IDC_STATIC,235,78,53,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_SLD_DISP,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,297,80,100,12
+    RTEXT           "-",IDC_TXT_DISP,398,78,10,14,SS_CENTERIMAGE
+    LTEXT           "Lig&ht time:",IDC_STATIC,235,96,53,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_SLD_LIGHT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,297,98,100,12
+    RTEXT           "-",IDC_TXT_LIGHT,398,96,10,14,SS_CENTERIMAGE
+    LTEXT           "&Standby time:",IDC_STATIC,235,114,53,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_SLD_STANDBY,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,297,114,100,12
+    RTEXT           "-",IDC_TXT_STANDBY,398,114,10,14,SS_CENTERIMAGE
+    LTEXT           "Sleep &time:",IDC_STATIC,235,130,53,12,SS_CENTERIMAGE
+    CONTROL         "",IDC_SLD_SLEEP,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,297,130,100,12
+    RTEXT           "-",IDC_TXT_SLEEP,398,130,10,14,SS_CENTERIMAGE
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,146,401,1
+    LTEXT           "MTP Manufa&ct.:",IDC_STATIC,7,151,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MTP_MANUFACTURER,63,151,345,12,ES_AUTOHSCROLL
+    LTEXT           "MTP Info:",IDC_STATIC,7,167,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MTP_INFO,63,167,159,12,ES_AUTOHSCROLL
+    LTEXT           "MTP Version:",IDC_STATIC,7,183,53,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MTP_VERSION,63,183,159,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,228,167,1,29
+    LTEXT           "MTP Serial:",IDC_STATIC,235,167,38,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MTP_SERIAL,276,167,132,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    RTEXT           "MTP VID:",IDC_STATIC,235,183,30,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MTP_VID,270,183,43,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,322,183,1,13
+    RTEXT           "MTP PID:",IDC_STATIC,330,183,30,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDT_MTP_PID,365,183,43,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,199,401,1
+    CONTROL         "Disable r&adio",IDC_CHK_RADIO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,201,63,10
+    DEFPUSHBUTTON   "OK",IDOK,302,204,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,358,204,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 141
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 273
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 137
+    END
+
+    IDD_WIZ_IMPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 357
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_WIZ_PG_DEVICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_WIZ_PG_ACCESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_WIZ_PG_FINISH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_WIZ_EXPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 357
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_FW_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 408
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_NO_IMG              BITMAP                  "res\\no_img.bmp"
+IDB_WIZARD              BITMAP                  "res\\wizard.bmp"
+IDB_FONT_SHEET          BITMAP                  "res\\sheet.font.bmp"
+IDB_FONT_SHEET_MASK     BITMAP                  "res\\sheet.font.mask.bmp"
+IDB_PROP_SHEET          BITMAP                  "res\\sheet.prop.bmp"
+IDB_PROP_SHEET_MASK     BITMAP                  "res\\sheet.prop.mask.bmp"
+IDB_IMAGE_SHEET         BITMAP                  "res\\sheet.image.bmp"
+IDB_IMAGE_SHEET_MASK    BITMAP                  "res\\sheet.image.mask.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCDATA
+//
+
+IDR_RTF_PG_DEVICE       RCDATA                  "res\\pg_device.rtf"
+IDR_RTF_PG_ACCESS_RD    RCDATA                  "res\\pg_access_rd.rtf"
+IDR_RTF_PG_FINISH_RD    RCDATA                  "res\\pg_finish_rd.rtf"
+IDR_RTF_PG_ACCESS_WR    RCDATA                  "res\\pg_access_wr.rtf"
+IDR_RTF_PG_FINISH_WR    RCDATA                  "res\\pg_finish_wr.rtf"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_NAME            "s1res"
+    IDS_ERROR               "Error"
+    IDS_ERROR_UNKNOWN       "Unknown error occured."
+    IDS_WARNING             "Warning"
+    IDS_CLOSE_WARN          "Do you really wan't to close the file and loose all the changes?"
+    IDS_OPEN_HELP_FAILED    "Failed to open the help file!"
+    IDS_OPEN_ITEM_FAILED    "Failed to open item...\n"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FOPEN_FILTER        "Firmware File\n*.fw;*.afi;*.bin\nResource File\n*.res\nBinary File\n*.bin\nAll Files\n*.*\n"
+    IDS_BROWSE_FILTER       "Executable Files\n*.exe\n"
+    IDS_BROWSE_CAPTION      "Browse for executable"
+    IDS_FSAVE_FILTER        "Default\n*.*\n"
+    IDS_UNNAMED             "UNNAMED.FW"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TVROOT_AFI          "[ AFI ]"
+    IDS_TVROOT_FW           "[ FIRMWARE ]"
+    IDS_TVROOT_RES          "[ RESOURCE ]"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STATUS_READY        "Ready"
+    IDS_STATUS_ITEMS        "Ready (%u image%s, %u string%s, %u unknown item%s, %u error%s)"
+    IDS_STATUS_STRINGS      "Ready (%u string%s, %u byte%s occupied, %i byte%s left)"
+    IDS_STATUS_FIRMWARE     "Ready (%u resource file%s, %u font file%s, %u unknown file%s, %u error%s)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TOOLTIP_IMAGE_MONO  "Name:\t%s\nColors:\tmonochrome\nSize:\t%u x %u pixel\n\t%u bytes"
+    IDS_TOOLTIP_IMAGE_OLED  "Name:\t%s\nColors:\t64k (16 bit)\nSize:\t%u x %u pixel\n\t%u bytes"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CLOSE_ITEM_FAILED   "Failed to close item...\n"
+    IDS_DRAGNDROP_FAILED    "Failed to drop file...\n"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIO_DEVICE_OPEN     "open device: "
+    IDS_DIO_DEVICE_RECOVERY "device is in recovery state!"
+    IDS_DIO_DEVICE_V9       "v9-device detected!"
+    IDS_DIO_GIVEIO_VER      "giveio version: %u.%u"
+    IDS_DIO_FLASH_OPEN      "open flash at cs-line %u..."
+    IDS_DIO_FLASH_NOT_FOUND "error: no flash chip detected."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIO_FLASH_CHIP      "flash chip: %08X ""%s"" (protected=%u)"
+    IDS_DIO_READ            "read..."
+    IDS_DIO_WRITE           "write..."
+    IDS_DIO_ERROR_RECOVERY  "error: failed to access firmware, device is in recovery state!"
+    IDS_DIO_NO_BREC         "warning: no bootrecord (BREC) part"
+    IDS_DIO_NO_FW           "warning: no firmware (FW) part"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIO_DONE            "done."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FWI_FLASH_TYPE      "Flash Type:\t%c%c%c%c"
+    IDS_FWI_FILE_ID         "File ID:\t\t0x%08X"
+    IDS_FWI_INVALID_HEADER_CHKSUM 
+                            "Invalid header checksum, firmware maybe damaged!"
+    IDS_FWI_VENDOR_ID       "Vendor ID:\t0x%04X"
+    IDS_FWI_PRODUCT_ID      "Product ID:\t0x%04X"
+    IDS_FWI_VERSION         "Version:\t\t%u.%u.%02X"
+    IDS_FWI_DATE            "Date:\t\t%02X/%02X/%02X%02X"
+    IDS_FWI_INFO            "Info:\t\t%s"
+    IDS_FWI_MANUFACTURER    "Manufacturer:\t%s"
+    IDS_FWI_DEVICE_NAME     "Device Name:\t%s"
+    IDS_FWI_USB_ATTR        "USB Attribute:\t%s"
+    IDS_FWI_USB_ID          "USB ID:\t\t%s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FWI_USB_REV         "USB Revision:\t%s"
+    IDS_FWI_MISSING_DATA    "\t\t <- missing data"
+    IDS_FWI_INVALID_CHKSUM  "\t\t <- invalid checksum"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STATUS_OPEN         "Open %s..."
+    IDS_STATUS_CLOSE        "Close %s..."
+    IDS_STATUS_CLOSE_ALL    "Close all open items..."
+    IDS_STATUS_EDIT         "Edit index %u..."
+    IDS_STATUS_FOPEN        "Open..."
+    IDS_STATUS_FCLOSE       "Close..."
+    IDS_STATUS_FSAVE        "Save..."
+    IDS_STATUS_IMPORT       "Import..."
+    IDS_STATUS_EXPORT       "Export..."
+    IDS_STATUS_PROPSHEET    "Open firmware property sheet..."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROPERTY_SHEET      "Firmware Property Sheet"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STATUS_AFI          "Ready (%u boot record%s, %u firmware file%s, %u unknown file%s, %u error%s)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FW_PROP_LANG        "Simple Chinese\tEnglish\tTraditional Chinese\tJapanese\tKorean\tGerman\tFrench\tItalian\tSpanish\tSwedish\tCzech\tDutch\tPortuguese\tDanmark\tPolish\tRussian"
+    IDS_FW_PROP_BATTERY     "Alkaline\tNiMH\tLithium"
+    IDS_FW_PROP_ONLINE      "multi mode (normal+encrypted)\tnormal mode\tencrypted mode"
+    IDS_FW_PROP_REPLAY      "manual replay\tauto replay"
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

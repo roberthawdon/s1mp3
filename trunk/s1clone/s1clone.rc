@@ -1,0 +1,394 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 0, 0, 381, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+CAPTION "s1clone wizard"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         106,IDC_IMAGE,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,100,230
+    CONTROL         "",IDC_CONTENT,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,108,7,266,193
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,104,204,275,1
+    PUSHBUTTON      "&Cancel",IDCANCEL,108,211,50,14
+    PUSHBUTTON      "<< &Back",IDC_BTN_PREV,268,211,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "&Next >>",IDC_BTN_NEXT,324,211,50,14
+END
+
+IDD_PG_SELECT DIALOGEX 108, 7, 266, 193
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RE2,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,7,7,252,100,WS_EX_TRANSPARENT
+    CONTROL         "&Read flash-image from s1mp3 player",IDC_RADIO_READ,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,110,252,10
+    CONTROL         "&Write flash-image to s1mp3 player",IDC_RADIO_WRITE,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,123,252,10
+    CONTROL         "&Verify flash-image with s1mp3 player",IDC_RADIO_VERIFY,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,136,252,10
+    CONTROL         "&Support this project and donate",IDC_RADIO_PAY,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,7,149,252,10
+END
+
+IDD_PG_END DIALOGEX 108, 7, 266, 193
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RE2,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,7,7,252,100,WS_EX_TRANSPARENT
+    PUSHBUTTON      "&Donate...",IDC_BTN_DONATE,91,110,84,26
+END
+
+IDD_PG_INIT DIALOGEX 108, 7, 266, 193
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RE2,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,7,7,252,119,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_RE2_TERMS,"RichEdit20W",ES_MULTILINE | ES_READONLY | ES_NUMBER | WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,126,252,60
+END
+
+IDD_PG_FILE DIALOGEX 108, 7, 266, 193
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RE2,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,7,7,252,100,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDT_FILE,7,110,235,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_BTN_OPEN,245,110,14,13,BS_ICON | BS_CENTER | BS_VCENTER | BS_FLAT
+END
+
+IDD_PG_CLONE DIALOGEX 108, 7, 266, 193
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RE2,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,7,7,252,90,WS_EX_TRANSPARENT
+    CONTROL         "...",IDC_TXT_STATUS,"Static",SS_LEFTNOWORDWRAP | SS_ENDELLIPSIS | WS_GROUP,7,100,252,9
+    LISTBOX         IDC_LIST,7,110,252,57,LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,172,252,14
+END
+
+IDD_PG_DEVICE DIALOGEX 108, 7, 266, 193
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_RE2,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,7,7,252,100,WS_EX_TRANSPARENT
+    CONTROL         "&Format disk (WARNING: ALL FILES WILL BE LOST!)",IDC_CHKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,112,235,10
+    PUSHBUTTON      "",IDC_BTN_RELOAD,245,110,14,13,BS_ICON | BS_CENTER | BS_VCENTER | BS_FLAT
+    LISTBOX         IDC_LIST,7,125,252,61,NOT LBS_NOTIFY | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 374
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_PG_SELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_PG_END, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_PG_INIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_PG_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_PG_CLONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_PG_DEVICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,4,0,1
+ PRODUCTVERSION 1,4,0,1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "http://www.s1mp3.de/"
+            VALUE "FileDescription", "s1clone"
+            VALUE "FileVersion", "1, 4, 0, 1"
+            VALUE "InternalName", "s1clone"
+            VALUE "LegalCopyright", "Copyright (C) 2007-2008 wiRe <wiRe@gmx.net>"
+            VALUE "OriginalFilename", "s1clone.exe"
+            VALUE "ProductName", "s1clone"
+            VALUE "ProductVersion", "1, 4, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON                    "res\\main.ICO"
+IDI_RELOAD              ICON                    "res\\reload.ICO"
+IDI_OPEN                ICON                    "res\\open.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MAIN                BITMAP                  "res\\main.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCDATA
+//
+
+IDR_RTF_PG_INIT         RCDATA                  "res\\pg_init.rtf"
+IDR_RTF_PG_END          RCDATA                  "res\\pg_end.rtf"
+IDR_RTF_TERMS           RCDATA                  "res\\terms.rtf"
+IDR_RTF_PG_SELECT       RCDATA                  "res\\pg_select.rtf"
+IDR_RTF_PG_DEVICE       RCDATA                  "res\\pg_device.rtf"
+IDR_RTF_PG_FILE         RCDATA                  "res\\pg_file.rtf"
+IDR_RTF_PG_CLONE        RCDATA                  "res\\pg_clone.rtf"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR               "Error"
+    IDS_WARNING             "Warning"
+    IDS_ASK_TO_QUIT         "Do you really wan't to cancel the current operation?"
+    IDS_COUNTDOWN           "%u seconds until operation starts, last chance to cancel."
+    IDS_FOPEN_CAPTION       "Browse for file..."
+    IDS_FOPEN_FILTER        "s1mp3 image files\n*.s1clone\nall files\n*.*\n"
+    IDS_FILE_EXTENSION      ".s1clone"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DEVICE_OPEN         "open device: "
+    IDS_DEVICE_RECOVERY     "device is in recovery state!"
+    IDS_DEVICE_V9           "v9-device detected!"
+    IDS_GIVEIO_VER          "giveio version: %u.%u"
+    IDS_DEVICE_READ_FAULT   "error: failed to read data from device."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FLASH_OPEN          "open flash at cs-line %u..."
+    IDS_FLASH_NOT_FOUND     "error: no flash chip detected."
+    IDS_FLASH_CHIP          "flash chip: %08X ""%s"" (protected=%u)"
+    IDS_FLASH_READ          "start reading flash..."
+    IDS_FLASH_READ_FAULT    "warning: failed to read page 0x%08X."
+    IDS_FLASH_WRITE         "start writing flash... (verification disabled)"
+    IDS_FLASH_WRITE_FAULT   "warning: failed to write page 0x%08X."
+    IDS_FLASH_FORMAT_FAILED "warning: failed to format block 0x%08X."
+    IDS_FLASH_FORMAT        "start formatting flash..."
+    IDS_FLASH_WRITE_AND_VERIFY "start writing flash... (verification enabled)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TIME_APPROX         "approximated remaining time: %u minute%s"
+    IDS_TIME_APPROX_COMPR   "approximated remaining time: %u minute%s, compression ratio: %i%%"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FILE_CREATE         "create file: "
+    IDS_FILE_OVERWRITE      "File does already exist!\nDo you really wan't to overwrite this file?"
+    IDS_FILE_OPEN           "open file: "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FORMAT              "format disk..."
+    IDS_FORMAT_SIZE         "disk capacity: %u blocks á %u bytes."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FORMAT_FAILED       "error: failed to format disk."
+    IDS_FORMAT_DONE         "format disk completed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIFF_FLASH_ID       "warning: different flash chip id."
+    IDS_DIFF_FLASH_SIZE     "warning: different flash size."
+    IDS_DIFF_FLASH_BLOCK_SIZE "warning: different flash block size."
+    IDS_DIFF_BROM           "warning: different boot rom, target seems to be incompatible."
+    IDS_DIFF_WARNING        "There are differences between the flash-image origin and the target device!\nDo you really wan't to continue?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_REPORT              "processed: %.2fMB, written: %.2fMB"
+    IDS_DONE                "done."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHKSUM_INVALID      "warning: invalid checksum for page 0x%08X."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VERIFY              "start verifying flash..."
+    IDS_VERIFY_DIFF         "warning: differences in page 0x%08X."
+    IDS_VERIFY_DIFF_FIN     "There are %u differences between the given image file and the flash.\nIf the image was taken from the same device previously, then it maybe invalid. Some few differences could get tolerated anyway."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHKBOX_VERIFY       "&Verify written data"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BROM_FAULT          "warning: failed to read brom."
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

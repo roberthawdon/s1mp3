@@ -1,0 +1,104 @@
+[Version]
+Signature = "$Chicago$"
+Provider  = %manufacturer%
+DriverVer = 03/20/2007,0.1.12.1
+
+Class = USB
+
+[Manufacturer]
+%manufacturer%=Devices,NT
+
+;--------------------------------------------------------------------------
+; Files
+;--------------------------------------------------------------------------
+
+[SourceDisksNames]
+1 = "Libusb-Win32 Driver Installation Disk",,
+
+[SourceDisksFiles]
+libusb0.sys = 1,,
+libusb0.dll = 1,,
+
+[DestinationDirs]
+libusb_files_sys = 10,system32\drivers
+libusb_files_dll = 10,system32
+
+[libusb_files_sys]
+libusb0.sys
+
+[libusb_files_dll]
+libusb0.dll
+
+;--------------------------------------------------------------------------
+; Device driver
+;--------------------------------------------------------------------------
+
+[LIBUSB_DEV]
+CopyFiles = libusb_files_sys, libusb_files_dll
+AddReg    = libusb_add_reg
+
+[LIBUSB_DEV.NT]
+CopyFiles = libusb_files_sys, libusb_files_dll
+
+[LIBUSB_DEV.HW]
+DelReg = libusb_del_reg_hw
+AddReg = libusb_add_reg_hw
+
+[LIBUSB_DEV.NT.HW]
+DelReg = libusb_del_reg_hw
+AddReg = libusb_add_reg_hw
+
+[LIBUSB_DEV.NT.Services]
+AddService = libusb0, 0x00000002, libusb_add_service
+
+[libusb_add_reg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,libusb0.sys
+
+; Older versions of this .inf file installed filter drivers. They are not
+; needed any more and must be removed
+[libusb_del_reg_hw]
+HKR,,LowerFilters
+HKR,,UpperFilters
+
+; Device properties
+[libusb_add_reg_hw]
+HKR,,SurpriseRemovalOK, 0x00010001, 1
+
+;--------------------------------------------------------------------------
+; Services
+;--------------------------------------------------------------------------
+
+[libusb_add_service]
+DisplayName    = "LibUsb-Win32 - Kernel Driver 03/20/2007, 0.1.12.1"
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 0
+ServiceBinary  = %12%\libusb0.sys
+
+;--------------------------------------------------------------------------
+; Devices
+;--------------------------------------------------------------------------
+
+[Devices]
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_8888
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff51
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff61
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff63
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff66
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff69
+
+[Devices.NT]
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_8888
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff51
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff61
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff63
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff66
+"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff69
+
+;--------------------------------------------------------------------------
+; Strings
+;--------------------------------------------------------------------------
+
+[Strings]
+manufacturer = "http://www.s1mp3.de/"

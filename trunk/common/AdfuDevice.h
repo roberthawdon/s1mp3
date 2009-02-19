@@ -2,10 +2,10 @@
 // AdfuDevice
 //
 // descr.   adfu device interface (general interface for all AdfuDeviceXxx classes)
-// author   wiRe _at_ gmx _dot_ net
+// author   wiRe <http://www.w1r3.de/>
 // source   http://www.s1mp3.de/
 //
-// copyright (c)2005-2007 wiRe.
+// copyright (c)2005-2009 wiRe.
 // this file is licensed under the GNU GPL.
 // no warranty of any kind is explicitly or implicitly stated.
 //=================================================================================================

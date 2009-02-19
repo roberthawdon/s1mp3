@@ -1,0 +1,62 @@
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+;ClassGUID=1181f4a0-f284-11d2-9068-00609797ea5a}
+provider=%MSFT%
+DriverVer=08/18/2005,3.0.0.0
+LayoutFile=layout.inf
+
+[Manufacturer]
+%MfgName%=Upgrade
+
+[Upgrade]
+%USB\VID_10D6&PID_8888.DeviceDesc%=MDisk.install,USB\VID_10D6&PID_8888
+%USB\VID_10D6&PID_ff51.DeviceDesc%=MDisk.install,USB\VID_10D6&PID_ff51
+%USB\VID_10D6&PID_ff61.DeviceDesc%=MDisk.install,USB\VID_10D6&PID_ff61
+
+;[PreCopySection]
+;HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+umss.files = 10,System32\Drivers
+
+[MDisk.install]
+CopyFiles=umss.files
+AddReg=umss.addreg
+
+[MDisk.install.NT]
+CopyFiles=umss.files
+AddReg=umss.addreg
+
+[MDisk.install.NT.Services]
+Addservice = AdfuUd, 0x00000002, AdfuUd_AddService
+
+[AdfuUd_AddService]
+DisplayName    = %USB\VID_10D6&PID_1160.DeviceDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\AdfuUd.sys
+LoadOrderGroup = Base
+
+[umss.addreg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,AdfuUd.SYS
+
+[umss.files]
+AdfuUd.sys
+
+[SourceDisksNames]
+1000 = "USB Mass Storage Device",,,
+
+[SourceDisksFiles]
+AdfuUd.SYS = 1000
+
+;---------------------------------------------------------------;
+
+[Strings]
+MSFT="MP3 Player"
+MfgName="MP3 Player"
+USB\VID_10D6&PID_8888.DeviceDesc="USB ADFU Device"
+USB\VID_10D6&PID_ff51.DeviceDesc="USB 2.0 (FS) ADFU Device"
+USB\VID_10D6&PID_ff61.DeviceDesc="USB 2.0 (HS) ADFU Device"

@@ -1,0 +1,57 @@
+<!doctype html public "-//w3c//dtd html 3.2 final//en">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <title>Frequently Asked Questions (FAQ)</title>
+</head>
+
+<body>
+
+<h1>Frequently Asked Questions (FAQ)</h1>
+
+<h4>How to change my player's images?</h4>
+<p>Run s1res and choose the "<i>Import Firmware...</i>" from the "<i>File</i>" menu and follow the wizard.
+  Once completed, you should be able to see your player's firmware content. Now edit the files
+  before you run the "<i>Export Firmware...</i>" wizard, which brings the changes back to your player.
+  </p>
+
+<h4>I opened an image for editing, but whenever i choose "<i>Close</i>" from the "<i>Edit</i>" menu, nothing happens!?</h4>
+<p>The close function isn't able to find and close the external image editor, which was used to open
+  your image resource. Anyway, it closes the file internally by finally reading any file changes.
+  If the resource is still in use, further changes to the file won't get noticed.
+  </p>
+
+<h4>I see the resource icons inside the right window of s1res, but how do i edit them?</h4>
+<p>The usual way should be to double-click them. Instead you could also highlight one or multiple icons
+  and choose "<i>Open</i>" from the "<i>Edit</i>" menu, or press <i>RETURN</i> alternatively. To open images,
+  an external tool is needed to edit the provided bitmap data. First make sure some image editor capable of 
+  bitmaps (BMP) is installed. Then use the "<i>Options</i>" dialog to choose your preferred application.
+  Another way may be to drag'n'drop bitmap images directly into s1res. This action depends on the source
+  filename and replaces the first equal named resource automatically. A quick way to apply new themes to
+  your player since you could drag'n'drop a whole bunch of files at once.
+  </p>
+
+<h4>How to edit string resources?</h4>
+<p>Just select the string resource in the left window and the right window will display one or more strings.
+  Multiple strings represent the same expression for different languages. To edit one entry, just
+  select the appropriate line and press the left mouse button or <i>RETURN</i>. Inside edit mode,
+  the status bar displays the number of available characters. The total amount is limited for each string.
+  If you need more space then try to delete characters from an unused language entry (just select the string and press <i>DEL</i>).
+  </p>
+<p>With v3.4, s1res supports several multi-byte character code-pages. E.g. to edit some russian text, first select the proper code page.
+  In this case go to the "<i>Select Code Page</i>" item inside the "<i>Edit</i>" menu and choose "<i>Cyrillic (1251)</i>".
+  Now you should be able to edit string resources using all characters available inside this code page.
+  If you want to learn more about windows code pages then please visit <a href="http://en.wikipedia.org/wiki/Windows_code_page">this page</a>.
+  </p>
+<p>To edit non-displayable characters you can still use URL-encoded (<a href="http://tools.ietf.org/html/rfc1738">RFC 1738</a>) edit-mode.
+  Go to the "<i>Select Code Page</i>" item inside the "<i>Edit</i>" menu and choose "<i>Default (URL-encoded)</i>".
+  During edit, non-printable ASCII characters get encoded by a '<i>%</i>'-prefix, followed by a two-digit hexadecimal value,
+  representing the <a href="ascii.gif">ASCII-code</a>.
+  </p>
+
+<h4>I don't know how to leave s1res?</h4>
+<p>Choose "<i>Exit</i>" from the "<i>File</i>" menu or quickly press <i>ALT+F4</i>.</p>
+
+</body>
+</html>
