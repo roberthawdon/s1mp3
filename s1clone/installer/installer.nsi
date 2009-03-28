@@ -37,7 +37,7 @@ Var STARTMENU_UNINST
 ; GENERAL SETTINGS
 ;--------------------------------------------------------------------------------------------------
 Name "s1clone"
-Caption "s1clone v2.0 - Setup"
+Caption "s1clone v2.1 - Setup"
 ;ShowInstDetails nevershow
 
 XPStyle on
@@ -109,7 +109,7 @@ BrandingText " "
 ;--------------------------------------------------------------------------------------------------
 ; VERSION INFO
 ;--------------------------------------------------------------------------------------------------
-VIProductVersion "2.0.0.0"
+VIProductVersion "2.1.0.0"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "application installer"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "1.0.0.1"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "s1clone setup"

@@ -37,7 +37,7 @@ Var STARTMENU_UNINST
 ; GENERAL SETTINGS
 ;--------------------------------------------------------------------------------------------------
 Name "s1res"
-Caption "s1res v4.0 - Setup"
+Caption "s1res v4.1 - Setup"
 ;ShowInstDetails nevershow
 
 XPStyle on
@@ -118,7 +118,7 @@ BrandingText " "
 ;--------------------------------------------------------------------------------------------------
 ; VERSION INFO
 ;--------------------------------------------------------------------------------------------------
-VIProductVersion "4.0.0.0"
+VIProductVersion "4.1.0.0"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileDescription" "application installer"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "1.0.0.0"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductName" "s1res setup"

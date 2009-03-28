@@ -1,7 +1,7 @@
 [Version]
 Signature = "$Chicago$"
 Provider  = %manufacturer%
-DriverVer = 03/20/2007,0.1.12.1
+DriverVer = 03/28/2009,0.1.12.1
 
 Class = USB
 
@@ -13,7 +13,7 @@ Class = USB
 ;--------------------------------------------------------------------------
 
 [SourceDisksNames]
-1 = "Libusb-Win32 Driver Installation Disk",,
+1 = "S1MP3 Libusb-Driver Installation Disk",,
 
 [SourceDisksFiles]
 libusb0.sys = 1,,
@@ -70,7 +70,7 @@ HKR,,SurpriseRemovalOK, 0x00010001, 1
 ;--------------------------------------------------------------------------
 
 [libusb_add_service]
-DisplayName    = "LibUsb-Win32 - Kernel Driver 03/20/2007, 0.1.12.1"
+DisplayName    = "S1MP3 LibUsb-Driver 0.1.12.1 (03/28/2009)"
 ServiceType    = 1
 StartType      = 3
 ErrorControl   = 0
@@ -81,20 +81,22 @@ ServiceBinary  = %12%\libusb0.sys
 ;--------------------------------------------------------------------------
 
 [Devices]
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_8888
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff51
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff61
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff63
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff66
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff69
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_8888
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff51
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff61
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff63
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff66
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff69
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff79
 
 [Devices.NT]
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_8888
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff51
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff61
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff63
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff66
-"S1MP3 ADFU Driver"=LIBUSB_DEV, USB\VID_10d6&PID_ff69
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_8888
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff51
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff61
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff63
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff66
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff69
+%devicename%=LIBUSB_DEV, USB\VID_10d6&PID_ff79
 
 ;--------------------------------------------------------------------------
 ; Strings
@@ -102,3 +104,4 @@ ServiceBinary  = %12%\libusb0.sys
 
 [Strings]
 manufacturer = "http://www.s1mp3.de/"
+devicename = "S1MP3 ADFU Device"

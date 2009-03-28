@@ -147,6 +147,7 @@
 #define IDC_EDT_MTP_INFO                1069
 #define IDC_STATUS                      1069
 #define IDC_EDT_MTP_VERSION             1070
+#define IDC_TXT_ACCESS                  1070
 #define IDC_EDT_MTP_VID                 1071
 #define IDC_EDT_MTP_PID                 1072
 #define IDC_EDT_MTP_INFO2               1073
@@ -203,7 +204,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        133
 #define _APS_NEXT_COMMAND_VALUE         42001
-#define _APS_NEXT_CONTROL_VALUE         1070
+#define _APS_NEXT_CONTROL_VALUE         1071
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
