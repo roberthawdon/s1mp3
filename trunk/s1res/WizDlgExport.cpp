@@ -107,7 +107,7 @@ BOOL WizDlgExport::onInitDialog(HWND hwndDlg)
   switch(getStage())
   {
   case IDD_WIZ_PG_DEVICE:
-    ::SetDlgItemTextA(hwndDlg, IDC_TEXT, (LPCSTR)RCData().load(getInstance(), IDR_RTF_PG_DEVICE));
+    ::SetDlgItemText(hwndDlg, IDC_TEXT, (LPCWSTR)RCData().load(getInstance(), IDR_RTF_PG_DEVICE));
     ::SendDlgItemMessage(hwndDlg, IDC_BTN_RELOAD, BM_SETIMAGE,
       IMAGE_ICON, (LPARAM)::LoadIcon(getInstance(), MAKEINTRESOURCE(IDI_RELOAD)));
     ::SendDlgItemMessage(hwndDlg, IDC_LIST, LB_RESETCONTENT, 0, 0);
@@ -122,7 +122,7 @@ BOOL WizDlgExport::onInitDialog(HWND hwndDlg)
     return false;
 
   case IDD_WIZ_PG_ACCESS:
-    ::SetDlgItemTextA(hwndDlg, IDC_TEXT, (LPCSTR)RCData().load(getInstance(), IDR_RTF_PG_ACCESS_WR));
+    ::SetDlgItemText(hwndDlg, IDC_TEXT, (LPCWSTR)RCData().load(getInstance(), IDR_RTF_PG_ACCESS_WR));
     if(!device.write(hwndDlg, nDevSel, 1, fGiveIO))
     {
       doError();
@@ -136,7 +136,7 @@ BOOL WizDlgExport::onInitDialog(HWND hwndDlg)
     return false;
 
   case IDD_WIZ_PG_FINISH:
-    ::SetDlgItemTextA(hwndDlg, IDC_TEXT, (LPCSTR)RCData().load(getInstance(), IDR_RTF_PG_FINISH_WR));
+    ::SetDlgItemText(hwndDlg, IDC_TEXT, (LPCWSTR)RCData().load(getInstance(), IDR_RTF_PG_FINISH_WR));
     EnableDlgItem(hwndDlg, IDC_STATUS, false);
     ::ShowWindow(::GetDlgItem(hwndDlg, IDC_STATUS), SW_HIDE);
     enablePrev(true);

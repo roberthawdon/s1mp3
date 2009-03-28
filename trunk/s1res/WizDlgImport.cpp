@@ -107,7 +107,7 @@ BOOL WizDlgImport::onInitDialog(HWND hwndDlg)
   switch(getStage())
   {
   case IDD_WIZ_PG_DEVICE:
-    ::SetDlgItemTextA(hwndDlg, IDC_TEXT, (LPCSTR)RCData().load(getInstance(), IDR_RTF_PG_DEVICE));
+    ::SetDlgItemText(hwndDlg, IDC_TEXT, (LPCWSTR)RCData().load(getInstance(), IDR_RTF_PG_DEVICE));
     ::SendDlgItemMessage(hwndDlg, IDC_BTN_RELOAD, BM_SETIMAGE,
       IMAGE_ICON, (LPARAM)::LoadIcon(getInstance(), MAKEINTRESOURCE(IDI_RELOAD)));
     ::SendDlgItemMessage(hwndDlg, IDC_LIST, LB_RESETCONTENT, 0, 0);
@@ -117,6 +117,7 @@ BOOL WizDlgImport::onInitDialog(HWND hwndDlg)
       enableCancel(false);
       EnableDlgItem(hwndDlg, IDC_BTN_RELOAD, false);
     }
+    EnableDlgItem(hwndDlg, IDC_TXT_ACCESS, true);
     EnableDlgItem(hwndDlg, IDC_RAD_ADFU, true);
     EnableDlgItem(hwndDlg, IDC_RAD_GIVEIO, true);
     SetDlgRadioButton(hwndDlg, IDC_RAD_ADFU, !fGiveIO);
@@ -125,7 +126,7 @@ BOOL WizDlgImport::onInitDialog(HWND hwndDlg)
     return false;
 
   case IDD_WIZ_PG_ACCESS:
-    ::SetDlgItemTextA(hwndDlg, IDC_TEXT, (LPCSTR)RCData().load(getInstance(), IDR_RTF_PG_ACCESS_RD));
+    ::SetDlgItemText(hwndDlg, IDC_TEXT, (LPCWSTR)RCData().load(getInstance(), IDR_RTF_PG_ACCESS_RD));
     if(!device.read(hwndDlg, nDevSel, 1, fGiveIO))
     {
       doError();
@@ -139,7 +140,7 @@ BOOL WizDlgImport::onInitDialog(HWND hwndDlg)
     return false;
 
   case IDD_WIZ_PG_FINISH:
-    ::SetDlgItemTextA(hwndDlg, IDC_TEXT, (LPCSTR)RCData().load(getInstance(), IDR_RTF_PG_FINISH_RD));
+    ::SetDlgItemText(hwndDlg, IDC_TEXT, (LPCWSTR)RCData().load(getInstance(), IDR_RTF_PG_FINISH_RD));
     if(!device.displayFirmware(hwndDlg))
     {
       doError();

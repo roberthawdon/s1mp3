@@ -141,8 +141,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 4,0,0,0
- PRODUCTVERSION 4,0,0,0
+ FILEVERSION 4,1,0,0
+ PRODUCTVERSION 4,1,0,0
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -159,12 +159,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "http://www.s1mp3.de/"
             VALUE "FileDescription", "s1mp3 resource editor"
-            VALUE "FileVersion", "4, 0, 0, 0"
+            VALUE "FileVersion", "4, 1, 0, 0"
             VALUE "InternalName", "s1res"
             VALUE "LegalCopyright", "Copyright (C) 2005-2009 wiRe. All rights reserved."
             VALUE "OriginalFilename", "s1res.exe"
             VALUE "ProductName", "s1res"
-            VALUE "ProductVersion", "4, 0, 0, 0"
+            VALUE "ProductVersion", "4, 1, 0, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -186,7 +186,7 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,74,127,50,14
     ICON            IDI_MAIN,IDC_STATIC,7,7,20,20,SS_CENTERIMAGE | SS_REALSIZEIMAGE
-    LTEXT           "s1res v4.0\n\nCopyright (c) 2005-2009 wiRe.\n\nThis program comes with ABSOLUTELY NO WARRANTY.\n\nThis is free software, and you are welcome to redistribute it  under certain conditions.\n\nRead license for more informations.",IDC_STATIC,32,12,160,92
+    LTEXT           "s1res v4.1\n\nCopyright (c) 2005-2009 wiRe.\n\nThis program comes with ABSOLUTELY NO WARRANTY.\n\nThis is free software, and you are welcome to redistribute it  under certain conditions.\n\nRead license for more informations.",IDC_STATIC,32,12,160,92
     LTEXT           "http://www.s1mp3.de/",IDC_TXT_HTTP,32,109,75,8
 END
 
@@ -231,7 +231,7 @@ STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_TEXT,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,0,0,265,75,WS_EX_TRANSPARENT
-    LTEXT           "Access method:",IDC_STATIC,0,77,52,10,SS_CENTERIMAGE | WS_DISABLED
+    LTEXT           "Access method:",IDC_TXT_ACCESS,0,77,52,10,SS_CENTERIMAGE | WS_DISABLED
     CONTROL         "&ADFU (native)",IDC_RAD_ADFU,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,56,77,61,10
     CONTROL         "&GIVEIO (v9-compatible)",IDC_RAD_GIVEIO,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,121,77,91,10
     PUSHBUTTON      "",IDC_BTN_RELOAD,251,75,15,13,BS_ICON | BS_CENTER | BS_VCENTER
@@ -242,18 +242,18 @@ IDD_WIZ_PG_ACCESS DIALOGEX 91, 7, 266, 161
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    CONTROL         "",IDC_TEXT,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,0,0,265,75,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_TEXT,"RichEdit20W",WS_DISABLED | 0x805,0,0,265,75,WS_EX_TRANSPARENT
     CONTROL         "",IDC_PROGRESS,"msctls_progress32",0x0,0,147,265,14
-    CONTROL         "",IDC_STATUS,"RichEdit20W",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY | WS_VSCROLL | WS_TABSTOP,0,90,265,57,WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATUS,"RichEdit20W",WS_VSCROLL | WS_TABSTOP | 0x9c4,0,90,265,57,WS_EX_STATICEDGE
 END
 
 IDD_WIZ_PG_FINISH DIALOGEX 91, 7, 266, 161
 STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_VISIBLE
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    CONTROL         "",IDC_TEXT,"RichEdit20W",ES_CENTER | ES_MULTILINE | ES_READONLY | WS_DISABLED,0,0,265,75,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_TEXT,"RichEdit20W",WS_DISABLED | 0x805,0,0,265,75,WS_EX_TRANSPARENT
     LTEXT           "",IDC_TXT_STATUS,0,77,265,10,SS_CENTERIMAGE
-    CONTROL         "",IDC_STATUS,"RichEdit20W",ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY | WS_VSCROLL | WS_TABSTOP,0,90,265,71,WS_EX_STATICEDGE
+    CONTROL         "",IDC_STATUS,"RichEdit20W",WS_VSCROLL | WS_TABSTOP | 0x9c4,0,90,265,71,WS_EX_STATICEDGE
 END
 
 IDD_WIZ_EXPORT DIALOGEX 0, 0, 364, 200

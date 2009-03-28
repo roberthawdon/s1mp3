@@ -110,8 +110,9 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, INT nCmdShow)
 {
   try
   {
-    InitCommonControls();
-    //LoadLibrary("RICHED32.DLL");
+    ::InitCommonControls();
+    //::LoadLibrary("RICHED20.DLL");
+    //::LoadLibrary("RICHED32.DLL");
 
     // init the main application
     if( !mainApp.init(hInstance, GetCommandLine(), nCmdShow) ) return(0);

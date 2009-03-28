@@ -239,7 +239,7 @@ static const char *MnemonicsXCB[256] =
 uint16 dasm(char *S, uint8 *A)
 {
   char R[128], H[10], C=0, *P;
-  const char * T;
+  const char *T;
   uint8 *B=A, J=0, Offset;
 
   switch(*B)
@@ -257,7 +257,7 @@ uint16 dasm(char *S, uint8 *A)
     default:   T=Mnemonics[*B++];
   }
 
-  if(P=strchr(T,'^'))
+  if(P=(char*)strchr(T,'^'))
   {
     strncpy(R,T,P-T); R[P-T]='\0';
     sprintf(H,"%02X",*B++);
@@ -266,13 +266,13 @@ uint16 dasm(char *S, uint8 *A)
   else strcpy(R,T);
   if(P=strchr(R,'%')) *P=C;
 
-  if(P=strchr(R,'*'))
+  if(P=(char*)strchr(R,'*'))
   {
     strncpy(S,R,P-R); S[P-R]='\0';
     sprintf(H,"%02X",*B++);
     strcat(S,H); strcat(S,P+1);
   }
-  else if(P=strchr(R,'@'))
+  else if(P=(char*)strchr(R,'@'))
   {
     strncpy(S,R,P-R); S[P-R]='\0';
     if(!J) Offset=*B++;
@@ -281,7 +281,7 @@ uint16 dasm(char *S, uint8 *A)
     sprintf(H,"%02X",J);
     strcat(S,H);strcat(S,P+1);
   }
-  else if(P=strchr(R,'#'))
+  else if(P=(char*)strchr(R,'#'))
   {
     strncpy(S,R,P-R); S[P-R]='\0';
     sprintf(H,"%04X",B[0]+256*B[1]);

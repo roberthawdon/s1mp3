@@ -31,7 +31,7 @@
 // global definitions
 //-------------------------------------------------------------------------------------------------
 #define URL_MAIN      _T("http://www.s1mp3.de/")
-#define URL_UPDATE    _T("http://www.s1mp3.de/update.s1res.html?4000")
+#define URL_UPDATE    _T("http://www.s1mp3.de/update.s1res.html?4100")
 #define URL_DONATE    _T("http://www.s1mp3.de/donate.s1res.html")
 
 
